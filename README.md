@@ -10,4 +10,5 @@ Here were our biggest takeaways in brief from our project:
 3. The treatment group (surprisingly) also spent ~42 seconds more on answering the questions, with the difference being statistically significant at the 5% level.
 
 Project Collaborators: Ajay Valecha, Arun Sharma, Sanjay Renduchintala, Jianyu Wang, Kaiqi Zhong, Prasun Shrestha
-Project Date: 10/2020 - 12/2020
+
+Project Date: Fall 2020
