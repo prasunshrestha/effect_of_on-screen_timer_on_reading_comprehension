@@ -1,0 +1,369 @@
+---
+title: "A/B Testing Project"
+author: "Team 2"
+date: "December 18, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+```{r Import Packages}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(cobalt)
+library(scales)
+library(data.table)
+library(stargazer)
+library(plm)
+library(usdm)
+library(pwr)
+library(ggthemes)
+```
+
+```{r Import Dataframe}
+df <- read_csv("project_data_cleaned.csv")
+```
+
+
+```{r Data Cleaning 1}
+df$finished <- tolower(df$finished)
+df$education <- as.character(df$education)
+df$education[df$education == "Master's degree"] <- "masters"
+df$education[df$education == "Less than high school degree"] <- '< high sch'
+df$education[df$education == "Bachelor's degree in college (4-year)"] <- 'bachelors'
+df$education[df$education == "Doctoral degree"] <- 'phd'
+df$education[df$education == "High school graduate (high school diploma or equivalent including GED)"] <- "high sch"
+df$education[df$education == "Some college but no degree"] <- 'some college'
+df$education[df$education == "Associate degree in college (2-year)"] <- 'associate'
+
+df$education <- as.factor(df$education)
+```
+
+
+```{r Data Cleaning 2}
+df_new <- dplyr::select(df,completion_rate, total_time, finished, gender, age, education, race,
+                 Q2, Q3, treatment, treatment_page_submit, control_page_submit,
+                 rc_page_submit, Q17, score_final)
+
+names(df_new) <- c("completion_rate","total_duration","finished", "gender","age", "education","race","awareness_shark", "awareness_shark_food", "treatment","read_time_treat","read_time_control","time_on_questions","post_test","final_score")
+
+df_new$treatment <- as.factor(as.character(df_new$treatment)) # treatment variables as a factor
+
+#removing entries where treatment is N/A
+df_final <- df_new[!is.na(df_new$treatment), ]
+df_final <- df_final[df_final$treatment != "#N/A",]
+
+df_final$finished <- with(df_final, ifelse(completion_rate==100, "true", "false"))
+
+#combining the reading time of treatment and control group in a single column
+df_final$read_time_treat <- with(df_final, ifelse(is.na(read_time_treat), read_time_control, read_time_treat))
+
+names(df_final)[names(df_final) == "read_time_treat"] <- "read_time" 
+
+#drop the reading time of both the treatment and the control group as they are already combined now
+dropcols <- c("read_time_control")
+df_final<-df_final[ , !(names(df_final) %in% dropcols)]
+
+
+#age variable as an integer
+df_final$age <- as.integer(as.character(df_final$age))
+df_final$treatment <- factor(df_final$treatment)
+```
+
+The total number of observations: `r nrow(df_final)`, with `r nrow(df_final[df_final$treatment ==1,])` participants in the treatment group and `r nrow(df_final[df_final$treatment ==0,])` in the control group.
+
+# Exploratory Data Analysis
+
+```{r Survey Completion}
+df_final %>% 
+  ggplot(aes(x = finished, fill = treatment))+
+  geom_bar(aes(y = ..prop.., position = "dodge", group = 1)) +labs(y = "Percentage", x = NULL)+ ggtitle("Survey Completion of Participants") + theme(plot.title = element_text(hjust = 0.5, face = "bold")) + facet_wrap(.~treatment) + scale_y_continuous(labels = percent)
+```
+
+
+```{r Gender Distribution}
+df_final %>% 
+  ggplot(aes(x = gender, fill = treatment)) +
+  geom_bar(aes(y = ..prop.., position = "dodge", group = 1)) +
+  labs(y = "Percentage", x = NULL) +
+  ggtitle("Gender Distribution") + theme(plot.title = element_text(hjust = 0.5, face = "bold")) +
+  facet_wrap(.~treatment) + scale_y_continuous(labels = percent)
+```
+
+```{r Education Level, fig.height =10}
+df_final %>% 
+  ggplot(aes(x = education, fill = treatment))+
+  geom_bar(aes(y = ..prop.., position = "dodge", group = 1)) +
+  labs(y = "Percentage", x = NULL) +
+  ggtitle("Education Distribution") + theme(plot.title = element_text(hjust = 0.5)) +
+  facet_wrap(.~treatment) +
+  theme(axis.text.x = element_text(angle = 90, hjust =1, vjust =1, size =9)) +
+  scale_y_continuous(labels = percent)
+```
+
+```{r Chi-Squared Test}
+chisq.test(df_final$gender, df_final$treatment)
+chisq.test(df_final$race, df_final$treatment)
+chisq.test(df_final$post_test, df_final$treatment)
+chisq.test(df_final$education, df_final$treatment)
+```
+
+```{r Pre-test 1: Awareness Regarding Shark Conservation}
+summary <- df_final[!is.na(df_final$awareness_shark),] %>% 
+  group_by(treatment) %>%
+  summarise(count = n(), avg.diff = mean(awareness_shark),
+            lower = t.test(awareness_shark, mu = 0)$conf.int[1],
+            upper = t.test(awareness_shark, mu = 0)$conf.int[2])
+
+summary$treatment <- as.factor(as.character(summary$treatment))
+
+summary %>%
+  ggplot(aes( x= treatment, y= avg.diff, fill = treatment)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = lower, ymax = upper),
+                width =0.3,
+                position = position_dodge(0.9)) + 
+                labs(y = "On the Scale of 5",
+                     x = NULL) +
+  ggtitle("Awareness Regarding Shark Conservation") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+
+```{r}
+summary <- df_final[!is.na(df_final$age),] %>% 
+  group_by(treatment) %>%
+  summarise( count = n(), avg.diff= mean(age), lower = t.test(age, mu =0)$conf.int[1], upper = t.test(age, mu =0)$conf.int[2])
+
+summary %>%
+  ggplot(aes( x= treatment, y= avg.diff, fill = treatment)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = lower, ymax = upper),
+                width =0.2,
+                position = position_dodge(0.9)) + labs(y = "Age", x = NULL) +
+  ggtitle("Age Distribution") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+
+```{r Pre-test 3: Awarness Regarding Shark Food}
+summary <- df_final %>% 
+  group_by(awareness_shark_food, treatment) %>% 
+  summarise(count = n())
+
+df_final %>%
+  ggplot(aes(x = awareness_shark_food, fill = treatment)) +
+  geom_bar(aes(y = ..prop.., position = "dodge", group = 1)) + 
+  labs(y = "Percentage", x = NULL) +
+  ggtitle("Prior Awareness about Shark Food") +
+  facet_wrap(.~treatment) + 
+  theme(plot.title = element_text(hjust = 0.5, face = "bold")) +
+  scale_y_continuous(labels = percent)
+```
+
+```{r}
+summary <- df_final %>% 
+  group_by(treatment) %>%
+  summarise(count = n(), avg.diff= mean(total_duration/60),
+            lower = t.test(total_duration/60, mu=0)$conf.int[1],
+            upper = t.test(total_duration/60, mu =0)$conf.int[2])
+
+summary %>%
+  ggplot(aes( x= treatment, y = avg.diff, fill = treatment)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = lower, ymax = upper),
+                width =0.4,
+                position = position_dodge(0.9)) +
+  labs(y = "Total Time (in minutes)", x = NULL) +
+  ggtitle("Total Survey Duration Distribution") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+  
+```
+
+```{r}
+summary <- df_final[!is.na(df_final$read_time),] %>% 
+  group_by(treatment) %>%
+  summarise(count = n(), avg.diff= mean(read_time),
+            lower = t.test(read_time, mu =0)$conf.int[1],
+            upper = t.test(read_time, mu=0)$conf.int[2])
+
+
+summary %>%
+  ggplot(aes( x= treatment, y= avg.diff, fill = treatment)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = lower, ymax = upper),
+                width =0.4,
+                position = position_dodge(0.9)) +
+  labs(y = "Total Time (in seconds)", x = NULL)+
+  ggtitle("Total Reading Time Distribution") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+
+```{r}
+summary <- df_final[!is.na(df_final$time_on_questions),] %>% 
+  group_by(treatment) %>%
+  summarise(count = n(), avg.diff= mean(time_on_questions),
+            lower = t.test(time_on_questions, mu =0)$conf.int[1],
+            upper = t.test(time_on_questions, mu =0)$conf.int[2])
+
+summary %>%
+  ggplot(aes(x = treatment, y= avg.diff, fill = treatment)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = lower, ymax = upper),
+                width =0.4,
+                position = position_dodge(0.9)) +
+  labs(y = "Total Time (in seconds)", x = NULL) +
+  ggtitle("Time Spent on Questions") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+
+```{r}
+summary <- df_final[!is.na(df_final$final_score),] %>% 
+  group_by(treatment) %>%
+  summarise(count = n(), avg.diff= mean(final_score),
+            lower = t.test(final_score, mu=0)$conf.int[1],
+            upper = t.test(final_score, mu =0)$conf.int[2])
+
+summary %>%
+  ggplot(aes( x= treatment, y= avg.diff, fill = treatment)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = lower, ymax = upper),
+                width =0.4,
+                position = position_dodge(0.9)) +
+  labs(y = "Score (out of 12)", x = NULL) +
+  ggtitle("Final Reading Comprehension Score") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+
+```{r}
+df_test <- df_final[,c("age", "gender","finished","education","race", "awareness_shark_food", "post_test", "treatment" )]
+df_test <- na.omit(df_test)
+
+df_test$treatment <- as.integer((as.character(df_test$treatment)))
+df_test$p.score <- glm(f.build("treatment", c("gender", "race", "education")),
+                       data = df_test, family = "binomial")$fitted.values
+df_test$att.weights <- with(df_test, treatment + (1-treatment)*p.score/(1-p.score))
+
+bal.tab(treatment ~ gender, data = df_test, weights = "att.weights", distance = "p.score")
+```
+
+
+# Results Obtained
+
+
+```{r Power Analysis}
+#power analysis
+
+#baseline probability and lift required
+P1 = 0.01 # baseline probability
+P2 = 0.1 # baseline+lift probability
+
+#plot power curve
+slevels<-seq(from=0.01, to=0.10, by=0.01)
+ptab <- cbind(NULL, NULL)
+
+for (i in 1:length(slevels)) {
+pwrt <- pwr.t2n.test(ES.h(P1,P2),
+                     n1 = 60,
+                     n2 = NULL,
+                     sig.level = slevels[i],
+                     power = 0.75,
+                     alternative="two.sided")
+ptab <- rbind(ptab, cbind(pwrt$n2, pwrt$sig.level))
+}
+
+temp <- ptab %>% as.data.frame()
+ggplot(temp, aes(x = V1, y = V2)) +
+  geom_line() +
+  geom_vline(xintercept = temp$V1[temp$V2 == 0.05], linetype = "dashed", color = "red", size = 0.5) +
+  labs(y = 'Significance Level (alpha)', x = 'Participants in the Treatment Group') +
+  ggtitle("Power Curve (Power = 0.75)") + theme(plot.title = element_text(hjust = 0.5, face = "bold")) +
+  scale_y_continuous(labels = percent)
+```
+
+```{r}
+df_final$gender <- as.factor(df_final$gender)
+df_final$education <- as.factor(df_final$education)
+df_final$race <- as.factor(df_final$race)
+df_final$post_test <- as.factor(df_final$post_test)
+```
+
+```{r Regression 1: Reading Comprehension Score}
+# Regression 1: Final score as DV(first regression without interaction terms, and the  second with regression)
+
+lm_score <- lm(final_score ~  treatment + gender + age + education + race + post_test, data = subset(df_final, read_time > 60))
+
+#heterogeneous causality with education level
+
+lm_score_with_interaction <- lm(final_score ~  treatment + gender + treatment * education +
+                                  age + education + race + 
+                                  post_test, data = subset(df_final, read_time > 60))
+
+stargazer(lm_score, lm_score_with_interaction,
+          se = NULL,
+          title = "Simple OLS Regression",
+          type="text",
+          omit = c("gender", "age", "race", "post_test", "read_time"),
+          add.lines = list (c("Education Interaction Term","No","Yes")))
+```
+
+```{r}
+#heterogeneous causality with gender
+
+lm_score_gender <- lm(final_score ~  treatment + gender + treatment * gender +
+                                  age + education + race + 
+                                  post_test, data = subset(df_final, read_time > 60))
+
+
+#heterogeneous causality with gender
+
+stargazer(lm_score, lm_score_gender,
+          se = NULL,
+          title = "Simple OLS Regression",
+          type="text",
+          omit = c("age", "race", "education", "post_test", "read_time"),
+          add.lines = list (c("Gender Interaction Term","No","Yes")))
+```
+
+```{r Regression 2: Survey Completion Rate}
+
+lm_completion <- lm(completion_rate ~  treatment  + gender  + age + education + race,
+                    data = df_final)
+
+lm_completion_with_filter <- lm(completion_rate ~  treatment  + gender  + age + education + race, data = subset(df_final, read_time > 60))
+
+stargazer(lm_completion, lm_completion_with_filter,
+          add.lines = list (c("Reading Time Filter","No","Yes")),
+          omit = c("gender", "age", "race", "education", "post_test", "read_time"),
+          type="text")
+```
+
+```{r Regression 3: Read Time}
+
+lm_read_time <- lm(read_time ~  treatment  + gender  + age + education + race,
+                    data = df_final)
+
+lm_read_time_with_filter <- lm(read_time ~  treatment  + gender  + age + education + race, data = subset(df_final, read_time > 60))
+
+stargazer(lm_read_time, lm_read_time_with_filter,
+          add.lines = list (c("Reading Time Filter","No","Yes")),
+          omit = c("gender", "age", "race", "education", "post_test", "read_time"),
+          type="text")
+```
+
+```{r Regression 4: Question Completion Time}
+lm_q_completion <- lm(time_on_questions ~  treatment  + gender  + age + education + race,
+                    data = df_final)
+
+lm_q_completion_filter <- lm(time_on_questions ~  treatment  + gender  + age + education + race,
+                    data = subset(df_final, read_time > 60 & time_on_questions > 60))
+
+stargazer(lm_q_completion, lm_q_completion_filter,
+          add.lines = list (c("Reading Time Filter","No","Yes"),
+                            c("Question Completion Time Filter","No","Yes")),
+          omit = c("gender", "age", "race", "education", "post_test", "read_time"),
+          type="text")
+```
+
+
