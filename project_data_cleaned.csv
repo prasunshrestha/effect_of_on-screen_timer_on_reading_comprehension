@@ -1,0 +1,171 @@
+﻿completion_rate,total_time,finished,gender,age,education,race,race2,Q2,Q3,treatment,treatment_first_click,treatment_last_click,treatment_page_submit,treatment_total_clicks,control_first_click,control_last_click,control_page_submit,control_total_clicks,rc_first_click,rc_last_click,rc_page_submit,rc_total_clicks,Q17,score_final
+100,336,TRUE,male,31,Master's degree,Asian,,2,No,1,0,0,180.016,0,,,,,3.026,71.595,81.594,10,No,7
+100,624,TRUE,male,23,Master's degree,Asian,,1,Yes,0,,,,,130.123,132.561,180.013,4,2.381,382.993,387.489,18,No,10
+100,774,TRUE,male,27,Master's degree,Asian,,1,No,1,56.63,56.63,180.022,1,,,,,244.602,390.391,392.09,12,No,6
+100,294,TRUE,male,18,Less than high school degree,White,,2,Yes,1,0,0,203.322,0,,,,,3.405,10.016,10.406,3,No,1
+100,431,TRUE,female,23,Master's degree,Asian,,3,Yes,1,48.318,126.613,180.009,16,,,,,4.96,128.227,129.406,12,No,5
+100,594,TRUE,male,23,Master's degree,Asian,,1,Yes,1,45.423,129.219,130.352,5,,,,,3.311,356.576,358.889,11,No,8
+100,41,TRUE,male,28,Master's degree,Asian,,1,No,1,0,0,2.256,0,,,,,1.081,12.415,13.383,11,Maybe,5
+100,363,TRUE,female,24,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,8.518,100.147,113.792,8,1.553,183.296,184.565,31,No,8
+100,563,TRUE,female,22,Master's degree,Asian,,4,Yes,1,4.337,177.241,180.014,42,,,,,2.962,271.866,273.603,54,No,7
+100,306,TRUE,female,24,Master's degree,Asian,,1,No,1,2.418,48.525,53.949,15,,,,,3.914,37.998,38.72,31,No,5
+100,263,TRUE,male,28,Bachelor's degree in college (4-year),Asian,,1,No,1,1.86,65.033,68.602,26,,,,,2.601,134.85,135.614,46,No,8
+100,453,TRUE,female,23,Bachelor's degree in college (4-year),Asian,,1,No,1,3.564,151.684,152.643,20,,,,,2.885,222.719,223.887,50,No,7
+100,474,TRUE,male,23,Master's degree,Asian,,3,No,1,1.097,178.8,180.147,43,,,,,0.72,227.116,227.713,56,No,9
+100,415,TRUE,female,24,Master's degree,Asian,,2,Yes,1,0,0,114.619,0,,,,,2.908,277.24,278.122,15,No,12
+100,483,TRUE,female,24,Bachelor's degree in college (4-year),Asian,,3,Yes,0,,,,,0,0,180.011,0,3.697,206.243,207.075,14,No,6
+100,2813,TRUE,male,27,Master's degree,Asian,,1,Yes,0,,,,,2.122,139.097,147.171,27,2.625,134.965,136.828,34,No,9
+100,203,TRUE,female,23,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,4.381,64.868,65.829,16,2.65,76.052,76.571,34,No,7
+100,310,TRUE,male,22,Bachelor's degree in college (4-year),Asian,,2,Yes,1,2.111,48.757,67.656,12,,,,,2.364,138.452,140.008,31,No,9
+100,315,TRUE,male,23,Master's degree,Asian,,1,Yes,1,3.451,87.522,92.943,25,,,,,2.402,168.109,168.541,48,No,10
+100,667,TRUE,female,22,Master's degree,Asian,,1,No,0,,,,,1.022,166.956,180.014,17,3.121,372.156,374.273,66,No,7
+100,506,TRUE,female,27,Bachelor's degree in college (4-year),White,,1,No,0,,,,,2.326,178.093,180.111,33,1.093,238.833,243.538,35,No,7
+100,273,TRUE,male,21,Master's degree,Asian,,2,Yes,1,53.005,80.313,81.446,5,,,,,2.356,148.747,149.823,27,No,8
+100,375,TRUE,male,23,Master's degree,Asian,,1,Yes,0,,,,,0.965,125.528,126.659,45,0.899,178.423,179.579,56,No,6
+100,277,TRUE,male,23,Bachelor's degree in college (4-year),"American Indian or Alaska Native,Asian",,3,Yes,0,,,,,1.201,21.394,29.601,17,3.267,172.81,174.258,61,No,4
+100,382,TRUE,male,24,Master's degree,Asian,,3,Yes,0,,,,,1.935,127.377,128.726,48,2.446,180.845,182.572,75,No,10
+100,368,TRUE,female,26,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,1.75,110.052,121.276,20,3.3,174.235,175.418,36,No,8
+100,9013,TRUE,female,25,Master's degree,Asian,,1,No,1,91.015,160.473,161.544,5,,,,,2.204,133.119,134.144,13,No,6
+100,228,TRUE,male,23,Bachelor's degree in college (4-year),Asian,,3,No,1,2.894,36.196,44.884,8,,,,,2.485,58.01,59.195,27,No,6
+100,658,TRUE,female,22,Master's degree,Asian,,2,Yes,1,0,0,119.59,0,,,,,4.866,40.771,41.914,12,No,7
+100,644,TRUE,female,24,Bachelor's degree in college (4-year),Asian,,3,Yes,1,2.787,167.846,180.013,24,,,,,2.65,333.215,334.235,41,No,5
+100,340,TRUE,male,23,Bachelor's degree in college (4-year),Asian,,2,Yes,1,3.073,87.557,100.16,12,,,,,2.175,172.993,173.63,28,No,7
+100,502,TRUE,male,23,Bachelor's degree in college (4-year),Asian,,1,Yes,1,3.718,160.489,180.119,32,,,,,1.116,243.94,244.886,71,No,11
+100,67,TRUE,male,23,Master's degree,Asian,,3,No,1,0.534,5.945,6.899,7,,,,,0.802,22.321,23.467,30,No,2
+100,310,TRUE,male,34,Master's degree,Asian,,2,No,0,,,,,0,0,93.395,0,2.385,135.853,137.522,11,No,10
+100,66,TRUE,male,19,Master's degree,Asian,,2,No,0,,,,,0.819,3.237,4.573,2,1.176,11.81,12.709,18,Yes,5
+100,535,TRUE,male,23,Doctoral degree,Asian,,4,Yes,0,,,,,1.025,131.607,133.244,39,2.667,306.629,307.953,105,No,9
+100,239,TRUE,male,24,Master's degree,Asian,,1,Yes,0,,,,,0.906,56.31,69.632,10,2.165,111.612,113.119,37,No,5
+100,264,TRUE,male,31,Master's degree,Asian,,5,Yes,0,,,,,3.429,90.993,91.774,13,1.304,98.142,100.889,28,No,8
+100,930,TRUE,male,28,Bachelor's degree in college (4-year),Asian,,2,Yes,1,0,0,180.01,0,,,,,3.343,577.511,582.139,9,No,7
+100,6507,TRUE,male,23,Bachelor's degree in college (4-year),Asian,,1,Yes,0,,,,,5.399,5.399,191.791,1,2.677,47.085,49.266,38,No,6
+100,540,TRUE,male,28,Master's degree,Asian,,1,No,1,17.112,134.098,140.177,8,,,,,2.539,189.709,190.571,25,No,6
+100,524,TRUE,female,24,Master's degree,Asian,,1,Yes,1,3.017,177.874,180.057,48,,,,,3.001,254.903,255.586,79,No,6
+100,361,TRUE,female,24,Master's degree,Asian,,2,Yes,1,1.393,170.568,180.012,29,,,,,4.25,106.866,108.836,41,No,4
+100,384,TRUE,male,24,Master's degree,Asian,,1,Yes,0,,,,,7.318,172.749,180.049,39,1.777,129.173,130.101,31,No,10
+100,2869,TRUE,female,26,Master's degree,Asian,,1,No,0,,,,,12.33,133.43,134.692,18,1.701,182.496,183.282,46,No,8
+100,514,TRUE,female,23,Bachelor's degree in college (4-year),Asian,,3,Yes,0,,,,,2.494,143.786,144.847,40,2.509,271.697,272.314,70,No,5
+100,5629,TRUE,male,34,Master's degree,Other,Sanatani,1,Yes,0,,,,,0,0,76.136,0,2.572,194.83,196.355,14,No,8
+100,106,TRUE,female,26,Bachelor's degree in college (4-year),Asian,,1,Yes,1,0.767,3.288,4.175,2,,,,,2.709,41.449,43.22,21,Maybe,4
+100,225,TRUE,male,23,Master's degree,Asian,,1,No,1,1.07,100.845,102.343,30,,,,,2.005,41.028,42.63,19,No,6
+100,338,TRUE,female,27,Master's degree,Asian,South Asian,2,Yes,1,4.002,115.862,117.541,24,,,,,2.551,126.268,127.162,31,No,6
+100,1251,TRUE,female,27,Bachelor's degree in college (4-year),Asian,,4,Yes,1,3.058,122.473,180.013,8,,,,,4.179,764.34,774.124,73,No,8
+100,495,TRUE,female,26,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,2.891,77.288,111.354,7,1.903,222.258,223.243,24,No,5
+100,428,TRUE,female,27,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,2.478,157.918,180.141,30,2.049,180,181.257,49,No,5
+100,312,TRUE,female,27,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,0,0,97.402,0,2.147,126.041,127.181,10,Yes,7
+100,139,TRUE,female,22,Master's degree,Asian,,3,Yes,0,,,,,0.734,2.559,3.372,2,5.04,95.606,96.051,21,Maybe,5
+100,334,TRUE,male,23,Bachelor's degree in college (4-year),Asian,,1,Yes,1,0,0,59.279,0,,,,,15.189,170.979,171.634,12,No,7
+100,462,TRUE,male,22,Bachelor's degree in college (4-year),Asian,,3,Yes,1,1.596,163.016,165.422,63,,,,,2.246,230.841,231.593,49,No,10
+100,507,TRUE,female,26,Master's degree,Asian,,2,Yes,1,1.34,140.091,140.748,70,,,,,3.503,276.341,279.264,107,No,4
+100,506,TRUE,female,23,Bachelor's degree in college (4-year),Asian,,1,Yes,0,,,,,1.316,124.449,155.449,42,2.094,263.106,267.586,61,No,6
+100,200,TRUE,male,24,Bachelor's degree in college (4-year),Asian,,2,Yes,1,3.692,24.625,25.349,13,,,,,2.396,126.168,126.868,79,No,10
+100,173,TRUE,female,22,Bachelor's degree in college (4-year),Asian,,3,Yes,1,0,0,50.82,0,,,,,1.905,77.803,78.788,10,No,8
+100,402,TRUE,male,23,Bachelor's degree in college (4-year),Other,African,1,No,1,5.767,98.658,108.718,12,,,,,2.711,231.548,231.585,37,No,4
+100,430,TRUE,female,22,High school graduate (high school diploma or equivalent including GED),African American,,1,No,1,3.284,149.948,150.47,34,,,,,1.889,170.804,172.223,49,No,6
+100,574,TRUE,female,30,Master's degree,Other,Latino,2,Yes,1,4.541,132.863,134.328,16,,,,,3.081,229.002,230.185,34,No,8
+100,3602,TRUE,male,35,Bachelor's degree in college (4-year),White,,3,Yes,0,,,,,3.823,3.823,7.925,1,0.658,9.675,19.513,11,Yes,4
+100,276,TRUE,male,25,Bachelor's degree in college (4-year),Asian,,3,Yes,0,,,,,4.207,81.045,83.31,28,1.639,118.689,119.51,46,No,11
+100,487,TRUE,female,28,Bachelor's degree in college (4-year),Asian,,1,No,1,77.569,128.062,148.735,3,,,,,2.07,227.095,228.164,13,No,6
+100,433,TRUE,female,27,Master's degree,Asian,,1,No,0,,,,,8.631,179.484,180.046,29,2.365,169.574,177.343,31,No,7
+100,1133,TRUE,male,24,Master's degree,Asian,,1,Yes,0,,,,,0,0,69.38,0,1.639,97.909,98.792,16,No,6
+100,300,TRUE,male,21,High school graduate (high school diploma or equivalent including GED),White,,1,Yes,1,54.498,77.321,79.717,10,,,,,1.36,191.005,194.441,30,No,10
+100,457,TRUE,male,27,Bachelor's degree in college (4-year),Asian,,1,No,1,0,0,155.309,0,,,,,2.947,202.589,206.356,11,No,11
+100,319,TRUE,male,24,Bachelor's degree in college (4-year),Asian,,1,No,1,4.471,100.796,107.359,22,,,,,2.631,165.581,166.329,57,No,7
+100,305,TRUE,male,32,Bachelor's degree in college (4-year),Asian,,1,Yes,1,0,0,109.86,0,,,,,2.434,128.687,130.185,10,No,9
+100,154,TRUE,male,28,Master's degree,Asian,,2,No,1,1.655,4.601,5.654,5,,,,,3.566,61.09,61.741,31,No,5
+100,375,TRUE,male,25,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,57.963,118.845,124.594,4,2.676,153.02,153.979,20,No,5
+100,345,TRUE,male,23,Bachelor's degree in college (4-year),White,,1,No,1,0,0,99.818,0,,,,,1.881,135.484,138.892,20,No,7
+100,523,TRUE,female,26,Bachelor's degree in college (4-year),Asian,,1,No,1,15.176,160.296,160.937,20,,,,,3.67,245.667,247.424,27,No,8
+100,458,TRUE,male,26,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,1.301,169.904,170.791,72,2.582,195.156,195.63,59,No,10
+100,327,TRUE,female,22,Bachelor's degree in college (4-year),Asian,,1,No,1,1.021,122.978,124.201,49,,,,,1.935,121.102,122.388,51,No,5
+100,518,TRUE,female,22,Bachelor's degree in college (4-year),White,,1,Yes,0,,,,,0,0,180.113,0,12.325,241.45,242.58,20,No,4
+100,318,TRUE,female,22,Bachelor's degree in college (4-year),Other,,1,Yes,1,8.653,123.25,128.195,17,,,,,1.997,131.842,134.462,32,No,8
+100,2309,TRUE,male,24,Master's degree,Asian,,1,No,1,0,0,15.323,0,,,,,4.257,74.281,74.928,10,No,2
+100,597,TRUE,female,22,Bachelor's degree in college (4-year),Asian,,2,Yes,0,,,,,1.245,113.732,114.208,41,3.101,184.608,186.1,51,No,8
+100,20301,TRUE,male,24,Bachelor's degree in college (4-year),White,,3,Yes,0,,,,,0.956,148.325,149.678,53,1.258,187.462,192.864,73,No,9
+100,132,TRUE,female,23,Master's degree,Asian,,2,No,0,,,,,0,0,13.69,0,2.745,49.403,50.354,6,No,3
+100,330,TRUE,male,23,Bachelor's degree in college (4-year),Asian,,2,Yes,0,,,,,2.4,101.824,117.81,19,2.54,170.797,171.362,56,No,7
+100,432,TRUE,female,24,Bachelor's degree in college (4-year),Asian,,2,Yes,1,0,0,180.013,0,,,,,2.237,186.682,187.981,14,No,7
+57,221,FALSE,male,24,Master's degree,Asian,,1,No,0,,,,,1.179,155.367,181.614,70,,,,,,
+100,207,TRUE,female,22,Bachelor's degree in college (4-year),Asian,,3,No,0,,,,,1.127,14.743,15.719,6,1.462,130.138,131.674,38,No,7
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,80,,female,23,Master's degree,Asian,,3,Yes,0,,,,,1.035,4.417,5.899,5,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,72,,female,24,Master's degree,Asian,Indian ,3,Yes,1,0.725,3.007,4.241,2,,,,,,,,,,
+57,43,,male,23,Master's degree,Asian,,1,Yes,1,0.692,2.46,3.941,6,,,,,,,,,,
+57,44,,female,23,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,0.808,2.356,3.521,2,,,,,,
+57,60,,male,23,Bachelor's degree in college (4-year),Asian,,2,Yes,1,0.542,1.026,3.355,2,,,,,,,,,,
+57,79,,female,24,Master's degree,Asian,,3,Yes,0,,,,,0.885,4.773,7.169,6,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,92,,female,23,Master's degree,Asian,,4,Yes,1,5.782,45.93,48.092,14,,,,,,,,,,
+57,152,,female,26,Bachelor's degree in college (4-year),Asian,,1,Yes,0,,,,,0.803,83.929,85.082,15,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,496,,male,40+,Bachelor's degree in college (4-year),Asian,,1,Yes,0,,,,,1.126,168.447,180.053,25,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,84,,male,25,Bachelor's degree in college (4-year),Asian,,2,Yes,0,,,,,0.725,3.535,4.039,7,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,696,,female,22,Master's degree,Asian,,2,Yes,1,28.202,29.931,32.134,4,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,156,,female,27,Master's degree,Asian,,1,No,0,,,,,0,0,4.864,0,,,,,,
+57,232,,male,21,High school graduate (high school diploma or equivalent including GED),White,,1,Yes,1,1.591,177.303,180.13,6,,,,,,,,,,
+57,374,,female,24,Master's degree,Asian,,1,Yes,0,,,,,1.588,81.659,95.535,26,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,85,,female,21,Bachelor's degree in college (4-year),Asian,,2,Yes,1,2.483,41.24,42.859,16,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+57,12343,,male,28,Master's degree,Asian,,1,No,0,,,,,13.247,108.583,118.834,12,,,,,,
+57,111,,female,23,Master's degree,Asian,,3,No,1,0.777,29.76,31.855,11,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+100,480,,male,28,Bachelor's degree in college (4-year),Asian,,2,Yes,1,3.365,108.665,133.239,29,,,,,2.699,151.045,151.725,37,No,7
+57,899,,female,24,Master's degree,Asian,,1,Yes,0,,,,,0,0,181.38,0,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+100,624,,female,25,Master's degree,Asian,,2,Yes,1,0,0,180.173,0,,,,,3.238,348.914,350.577,21,No,7
+100,452,,female,23,Bachelor's degree in college (4-year),Other,British Asian ,1,Yes,1,0.917,150.388,156.653,29,,,,,4.926,198.05,200.843,73,No,3
+100,370,,female,23,Bachelor's degree in college (4-year),Asian,,1,Yes,1,0.879,108.915,127.045,44,,,,,2.601,187.743,188.942,52,No,9
+100,1195,,female,20,High school graduate (high school diploma or equivalent including GED),Asian,,1,Yes,1,4.668,138.096,140.389,44,,,,,3.293,231.759,234.459,57,No,7
+100,919,,female,24,Bachelor's degree in college (4-year),Other,,2,No,1,11.812,75.022,83.175,14,,,,,1.415,472.817,475.267,53,Yes,3
+100,336,,female,26,Master's degree,Asian,,1,Yes,1,3.501,86.597,106.341,12,,,,,2.136,157.748,158.579,30,No,7
+100,506,,male,24,Bachelor's degree in college (4-year),Asian,,1,No,1,0,0,129.92,0,,,,,2.416,270.542,274.63,87,No,9
+100,393,,male,23,Bachelor's degree in college (4-year),Asian,,2,Yes,1,0,0,180.011,0,,,,,1.972,133.002,134.388,10,No,11
+100,374,,male,23,Bachelor's degree in college (4-year),White,Asian,1,Yes,0,,,,,3.107,105.128,108.064,16,2.439,178.049,179.558,28,No,6
+100,538,,female,24,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,9.439,144.501,152.056,23,3.31,226.011,227.283,31,No,11
+100,342,,male,23,Bachelor's degree in college (4-year),White,,1,No,0,,,,,2.012,103.817,108.468,36,2.643,161.709,163.091,27,No,7
+100,401,,female,22,Bachelor's degree in college (4-year),Asian,,2,Yes,0,,,,,15.523,91.731,116.643,10,1.858,177.69,178.932,9,No,7
+100,996,,female,24,Master's degree,Other,,1,Yes,1,2.169,75.705,135.201,44,,,,,2.439,173.114,174.555,55,No,6
+100,393,,female,23,Master's degree,Asian,,2,Yes,0,,,,,3.935,101.705,126.652,7,2.127,199.586,201.393,28,No,8
+100,473,,female,22,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,19.631,24.108,180.133,3,3.711,212.927,217.029,13,No,5
+100,529,,male,20,Bachelor's degree in college (4-year),Asian,,3,Yes,1,0,0,180.127,0,,,,,3.254,212.918,214.792,11,No,9
+100,391,,female,21,Some college but no degree,Black or African American,,1,Yes,1,1.969,115.92,125.483,28,,,,,2.5,185.434,186.793,54,No,8
+100,662,,male,24,Bachelor's degree in college (4-year),Asian,,3,Yes,1,2.613,145.47,148.447,13,,,,,3.301,326.347,327.946,41,No,8
+100,621,,male,30,Bachelor's degree in college (4-year),Asian,,1,No,1,6.837,179.706,180.122,28,,,,,5.887,252.605,253.591,45,No,6
+100,4537,,female,26,Master's degree,Asian,,1,No,1,2.891,119.702,122.873,32,,,,,1.319,142.861,142.89,26,No,5
+100,681,,female,21,High school graduate (high school diploma or equivalent including GED),Asian,,2,Yes,0,,,,,2.983,177.982,180.015,39,0.685,251.999,253.473,53,,5
+100,259,,female,23,Bachelor's degree in college (4-year),Asian,,1,No,1,4.536,95.406,96.222,21,,,,,2.067,104.538,105.493,43,No,9
+100,303,,male,23,Bachelor's degree in college (4-year),Asian,South asian,1,Yes,0,,,,,1.118,92.592,95.903,46,0.854,124.966,126.178,55,No,6
+100,330,,female,22,Bachelor's degree in college (4-year),Asian,,1,No,0,,,,,1.738,86.721,87.805,23,1.687,143.707,144.612,53,No,6
+100,376,,male,21,Some college but no degree,Asian,Pakistani,3,No,0,,,,,3.284,117.453,148.269,19,2.201,118.297,119.115,37,No,6
+100,366,,female,20,Associate degree in college (2-year),Other,,1,No,1,0.752,95.749,97.058,30,,,,,1.804,168.63,169.554,52,No,7
+100,313,,male,20,Some college but no degree,Asian,,3,Yes,1,0,0,87.243,0,,,,,2.945,151.776,153.59,13,No,10
+100,351,,male,27,Master's degree,Asian,,1,No,1,1.27,113.879,114.541,28,,,,,2.301,159.378,160.217,44,No,9
+100,287,,male,28,Master's degree,Asian,,1,No,0,,,,,0,0,78.966,0,2.015,130.112,131.571,11,No,4
+100,495,,male,30,Master's degree,Asian,,2,No,1,14.863,122.838,180.026,5,,,,,3.814,216.444,217.051,29,Yes,7
+100,275,,female,20,Bachelor's degree in college (4-year),Asian,South Asian,1,No,0,,,,,1.007,58.063,65.219,31,1.367,63.659,64.457,27,No,9
+100,521,,male,21,Some college but no degree,Asian,,1,No,1,11.399,175.8,180.149,23,,,,,2.461,257.702,258.814,52,No,9
+100,567,,female,25,Master's degree,Asian,,1,No,1,20.6,171.272,180.039,18,,,,,3.301,242.974,245.596,49,No,9
+100,251,,male,19,High school graduate (high school diploma or equivalent including GED),Asian,,4,Yes,1,7.823,66.234,69.23,18,,,,,1.395,112.356,113.214,44,No,8
+100,423,,female,24,Bachelor's degree in college (4-year),Asian,,1,No,1,1.08,159.967,160.755,67,,,,,2.094,198.882,199.488,88,No,7
+100,540,,male,28,Doctoral degree,Asian,,2,Yes,1,0.884,178.38,180.011,52,,,,,2.347,290.195,291.115,86,No,6
